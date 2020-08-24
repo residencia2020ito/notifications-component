@@ -21,6 +21,7 @@ public class Receiver {
 	@Autowired
 	private EmailSenderService emailService;
 
+
 	@Autowired
 	private SmsSenderService smsService;
 
@@ -32,9 +33,11 @@ public class Receiver {
 		SendEmail sendEmail = objectMapper.readValue(message, SendEmail.class);
 		emailService.sendEmail(sendEmail);
 		System.out.println("String instance " + sendEmail.toString() + " [x] Received");
+		
 
 	}
 
+	/*
 	@RabbitListener(autoStartup = "true", bindings = @QueueBinding(value = @Queue(name = "sms"), exchange = @Exchange(name = "notification", type = ExchangeTypes.FANOUT)))
 	@RabbitHandler
 	public void onSMS(String message) throws Exception {
@@ -45,5 +48,5 @@ public class Receiver {
 		System.out.println("String instance " + sendEmail.toString() + " [x] Received");
 
 	}
-
+*/
 }

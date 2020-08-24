@@ -28,7 +28,9 @@ public class SmsSenderService {
 	private String AUTH_TOKEN;
 	@Value(value = "${twilioSMS-TWILIO_NUMBER.value}")
 	private String TWILIO_NUMBER;
-
+	
+	
+/*
 	public void sendSms(SendEmail sms) throws MessagingException, IOException {
 
 		Map<String, Object> map = sms.getMap();
@@ -42,4 +44,5 @@ public class SmsSenderService {
 				.create();
 		log.info("Envio sms");
 	}
+	*/
 }
